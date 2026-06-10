@@ -1,0 +1,34 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+
+  "inbounds": [
+    {
+      "tag": "ss-in",
+      "port": 10086,
+      "protocol": "shadowsocks",
+      "settings": {
+        "method": "2022-blake3-aes-256-gcm",
+        "password": "SERVER_MASTER_KEY",
+        "network": "tcp,udp",
+        "clients": [
+          {
+            "password": "user1_password",
+            "email": "user1"
+          },
+          {
+            "password": "user2_password",
+            "email": "user2"
+          }
+        ]
+      }
+    }
+  ],
+
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}
